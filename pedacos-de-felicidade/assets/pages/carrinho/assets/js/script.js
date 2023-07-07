@@ -158,8 +158,8 @@ function deductQtd(event) {
     }
 
 }
-
-function addToCartClicked(event) {
+ function addToCartClicked(event) {
+    event.preventDefault()
     let btn = event.target;
     let item = btn.parentElement;
     let title = item.getElementsByClassName('product-title')[0].innerText;
@@ -172,6 +172,7 @@ function addToCartClicked(event) {
         price: price,
         img: img
     }
+
     addItemToCart(bolo);
 }
 
