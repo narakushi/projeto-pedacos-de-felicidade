@@ -400,7 +400,6 @@ body {
     font-size: 2rem;
     border-radius: 2rem 2rem 0 0;
     font-weight: bold;
-
     cursor: default;
     padding: 0.8rem;
     text-shadow: 0.1rem 0.25rem 0.4rem rgba(0, 0, 0, 0.404);
@@ -412,7 +411,7 @@ body {
 }
 
 .form-cadastro .form-dados {
-    margin: 2rem 2rem 4rem 2rem;
+    margin: 2rem 2rem 3rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -555,4 +554,52 @@ body {
     color: var(--color-brown);
     text-align: center;
     width: 20rem;
+}
+
+@media(max-width: 768px) {
+
+    .header .logo-nav .nav-bar,
+    .header .buttons {
+        display: none;
+    }
+
+    .header .toggle-btn,
+    .header .toggle-btn img {
+        display: block;
+    }
+
+    .dropdown-menu {
+        display: flex;
+    }
+
+    .content .card{
+        height: 77%;
+    }
+    
+    .content .card .header-card-cad, 
+    .content .card .form-cadastro,
+    .form-cadastro .form-dados,
+    .card .botoes-form button{
+        font-size: 1.6rem;
+        margin: 0.5;
+    }
+
+    .footer .container-footer .data-footer img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo-footer img {
+        width: 18rem;
+    }
+
+    .data-footer p {
+        font-size: 1.4rem;
+        width: 10rem;
+    }
+
+    .cart {
+        margin-right: -100vw;
+    }
+
 }

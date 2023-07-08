@@ -251,13 +251,13 @@ async function fazPost(bolo) {
     const url = 'http://localhost:3000/produtos';
     fetch(url, init)
         .then((response) => {
-            return response.json();
+            return response.json(); //obtenho a resposta do post convertida em json
         })
         .then((bolo) => {
-            console.log(dados);
+            console.log(bolo); //só para mostrar que o bolo chegou no post
         })
         .catch ((error) =>{
-            console.log("Erro, produto não cadastrado", error);
+            console.log("Erro, produto não cadastrado", error); //caso dê erros, entra nesse catch
         })   
 }
 
@@ -267,6 +267,7 @@ function createCake() {
     let descricao = document.querySelector("#descricao").value;
     let preco = document.querySelector("#preco").value;
     let img = document.querySelector("#arquivo").files[0];
+    let msg = '';
 
     const bolo = {
         nome: nome,
@@ -278,7 +279,25 @@ function createCake() {
     //dados.append('bolo', JSON.stringify(bolo));
     //dados.append('imagem', img);
 
-    fazPost(bolo);
+    if((nome.length != 0) && (preco.length != 0) && (descricao.length != 0))
+    {
+        fazPost(bolo);
+    }
+    if(nome.length == 0)
+    {
+        msg += `Informe o nome!`;
+    }
+    if(preco.length == 0)
+    {
+        msg += `\nInforme o preço!` ;
+    }
+    if(descricao.length == 0)
+    {
+        msg += '\nInforme a descrição!';
+    }
+    if(msg){
+        alert(msg);
+    }
 }
 
 
