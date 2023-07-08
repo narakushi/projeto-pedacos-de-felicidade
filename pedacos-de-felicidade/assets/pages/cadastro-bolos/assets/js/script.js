@@ -223,6 +223,15 @@ function addItemToCart(bolo) {
 
 ready();
 
+//função pra limpar os inputs
+function limpar(){
+    document.querySelector('#nome').value = '';
+    document.querySelector('#descricao').value = '';
+    document.querySelector('#preco').value = '';
+    document.querySelector('#selecionar-img').innerHTML = 'Selecionar imagem';
+   
+}
+
 //pegando dados do front para enviar ao back
 let form = document.querySelector('.form-cadastro');
 
@@ -253,12 +262,15 @@ async function fazPost(bolo) {
         .then((response) => {
             return response.json(); //obtenho a resposta do post convertida em json
         })
-        .then((bolo) => {
-            console.log(bolo); //só para mostrar que o bolo chegou no post
+        .then((response) => {
+            response = response.produto;
+            console.log(response);
+            alert(`Produto: ${response.nome} foi cadastrado com sucesso!`) //só para mostrar que o bolo chegou no post e agora foi restornado de lá como response =)
         })
         .catch ((error) =>{
             console.log("Erro, produto não cadastrado", error); //caso dê erros, entra nesse catch
-        })   
+        }) 
+        
 }
 
 function createCake() {
@@ -282,6 +294,7 @@ function createCake() {
     if((nome.length != 0) && (preco.length != 0) && (descricao.length != 0))
     {
         fazPost(bolo);
+        limpar();
     }
     if(nome.length == 0)
     {
