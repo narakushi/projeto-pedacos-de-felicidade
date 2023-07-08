@@ -22,7 +22,6 @@ html {
 
 body {
     background-color: var(--color-creme);
-    
 }
 
 .header,
@@ -69,7 +68,7 @@ body {
     padding: 0.5rem;
     align-items: center;
     font-size: 1.8rem;
-    color: var(--color-brown);
+
 }
 
 .header .buttons button {
@@ -79,6 +78,15 @@ body {
     border-radius: 1rem;
     border: 1px solid var(--color-vine);
     cursor: pointer;
+}
+
+.header .buttons a {
+    text-decoration: none;
+    color: var(--color-brown);
+}
+
+.header .sign-up a {
+    color: var(--color-creme);
 }
 
 .header button img {
@@ -92,16 +100,6 @@ body {
     display: flex;
 
 }
-
-.header .buttons a{
-    text-decoration: none;
-    color: var(--color-brown);
-}
-
-.header .sign-up a{
-    color: var(--color-creme);
-}
-
 
 .buttons span {
     margin-left: 0.3rem;
@@ -371,112 +369,150 @@ body {
     transition: cubic-bezier(0.39, 0.575, 0.565, 1)
 }
 
-.mae{
-    min-height: 100vh;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.mae .content {
-    background-image: url('../imgs/bolos-body.png');
-    background-size: cover;
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    background-position: center;
-    min-width: 60vh;
-}
-
-.content .highlights {
-    margin: 60vh 2rem;
-    display: flex;
-    z-index: 2;
-    width: 100%;
-    flex-direction: column;   
-}
-
-.content .highlights .child-h p {
-    font-size: 2rem;
+.content {
+    background-image: url("../imgs/background-cakes.png");
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+
+
+}
+
+.content .card {
+    background-color: var(--color-rose);
+    width: 70%;
+    height: 75%;
+    margin-top: 10rem;
+    border: 2px solid var(--color-pastel-pink);
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.8rem 0.2rem rgba(197, 16, 40, 0.8);
     color: var(--color-brown);
-    padding: 1rem;
 }
 
-.child-h {
-    margin: 0 auto;
+.content .header-card-cad {
     display: flex;
-    width: 90%;
     justify-content: center;
-    border-bottom: 1px solid var(--color-brown);
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-pastel-pink);
+    font-size: 2rem;
+    border-radius: 2rem 2rem 0 0;
+    font-weight: bold;
+
+    cursor: default;
+    padding: 0.8rem;
+    text-shadow: 0.1rem 0.25rem 0.4rem rgba(0, 0, 0, 0.404);
+}
+
+.content .form-cadastro {
+    margin: 3rem;
+    font-size: 1.8rem;
+}
+
+.form-cadastro .form-dados {
+    margin: 2rem 2rem 4rem 2rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.child-h img {
-    width: 2.5rem;
-    height: 2.5rem;
+.form-cadastro .form-dados .rotulo {
+    margin-right: 3rem;
+    justify-content: left;
+    width: 6rem;
+    display: flex;
+    align-items: center;
 }
 
-.content .child-h>p:hover {
-    scale: 1.05;
-    cursor: default;
+.form-dados .rotulo img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1.5rem;
+}
+
+.form-cadastro .form-dados input {
+    width: 60%;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1.8rem;
+    border: 0.1rem solid #e2b2ad;
+    padding: 0.8rem;
+}
+
+.rotulo label[for="arquivo"] {
+    background-color: #E82D46;
+    padding: 1rem;
+    border-radius: 2rem;
+    color: var(--color-creme);
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+.rotulo label[for="arquivo"]:hover{
+    background-color: var(--color-vine);
     transition: 1s;
 }
 
-.content .products {
-    margin-top: 5rem;
-    padding: 0 8rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: absolute; 
-    margin-bottom: 15%; 
+.rotulo label[for="arquivo"],
+.rotulo p {
+    margin-left: 2rem;
 }
 
-.content .products img {
-    border: 1px solid var(--color-creme);
-    width: 18rem;
-    height: 15.8rem;
-    border-radius: 1rem;
+.rotulo p {
+    margin-left: 2rem;
 }
 
-.content .products .cake {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-basis: 20%;
-    margin: 2rem;
+.rotulo input[type="file"] {
+    display: none;
 }
 
-.content .products .cake p {
-    margin: 0.5rem 0;
-    font-size: 1.8rem;
-    cursor: default;
-}
-
-.content .products .btn-buy {
-    color: var(--color-creme);
-    background: var(--color-vine);
-    padding: 0.5rem 3rem;
-    border-radius: 1rem;
-    font-size: 1.8rem;
+.form-dados #arquivo {
     border: none;
 }
 
-.content .products .btn-buy:hover {
-    background: var(--color-pink);
-    color: var(--color-creme);
-    transition: 1s;
-    scale: 1.05;
+.card .botoes-form {
+    display: flex;
+    justify-content: center;
+}
+
+.card .botoes-form button{
+    margin: 0 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
     cursor: pointer;
     border: 1px solid var(--color-vine);
 }
 
-.content .products img:hover {
-    scale: 1.1;
-    transition: 800ms;
-    cursor: pointer;
+.card .botoes-form button:nth-child(1){
+    background-color: var(--color-pastel-pink);
+}
+
+.card .botoes-form button:nth-child(2){
+    background-color: var(--color-vine);
+  
+}
+
+.card .botoes-form button:nth-child(2) a{
+    color: var(--color-creme);
+    text-decoration: none;
+   
+}
+
+.card .botoes-form button:nth-child(1):hover{
+    scale: 1.05;
+    transition: 1s;
+    background-color: var(--color-pink);
+}
+
+.card .botoes-form button:nth-child(2):hover{
+    scale: 1.05;
+    transition: 1s;
+    background-color: var(--color-pink);
 }
 
 .footer {
@@ -484,12 +520,12 @@ body {
     align-items: center;
     justify-content: space-between;
     border-radius: 3rem 3rem 0 0;
-    width: 100%;
+    width: 100vw;
+    position: relative;
     flex-direction: column;
     display: flex;
     box-shadow: 1px -2px 5px var(--color-pink);
-    padding: 2rem 3rem;
-    margin-top: 20rem;
+    padding: 2rem 0rem;
 }
 
 .footer .container-footer {
@@ -505,7 +541,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 7rem;
+    margin: 0 3rem;
 }
 
 .container-footer .data-footer img {
@@ -518,120 +554,5 @@ body {
     font-size: 1.8rem;
     color: var(--color-brown);
     text-align: center;
-    width: 16rem;
-}
-
-@media(max-width: 950px) and (min-width: 670px){
-
-    .header .logo-nav .nav-bar,
-    .header .buttons {
-        display: none;
-    }
-
-    .header .toggle-btn,
-    .header .toggle-btn img {
-        display: block;
-    }
-
-    .dropdown-menu {
-        display: flex;
-    }
-
-    .content .highlights {
-        height: 100vh;
-    }
-
-    .content .products {
-        margin-top: 5rem;
-        padding: 0 2rem;
-       
-        flex-wrap: wrap;
-        position: absolute; 
-        height: 100rem;
-    }
-
-    .content .products {
-        flex-wrap: wrap;
-        padding: 0 2rem;
-        
-        justify-content: space-around;
-        
-    }
-
-    .content .products .cake {
-        margin: 1rem;
-        flex-basis: 25%;
-    }
-
-    .footer {
-        margin-top: 100%;
-        width: 100vw;
-    }
-
-    .footer {
-        width: 100%;
-        position: absolute;
-        margin-top: 175rem;
-    }
-
-    .footer .container-footer .data-footer {
-        margin: 0 4rem;
-    }
-
-    .footer .container-footer .data-footer img {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .logo-footer img {
-        width: 18rem;
-    }
-
-    .data-footer p {
-        
-        width: 14rem;
-    }
-
-    .cart {
-        margin-right: -100vw;
-    }
-
-}
-
-@media(max-width: 671px)
-{
-    .header .logo-nav .nav-bar,
-    .header .buttons {
-        display: none;
-    }
-
-    .header .toggle-btn,
-    .header .toggle-btn img {
-        display: block;
-    }
-
-    .dropdown-menu {
-        display: flex;
-    }
-
-    .footer {
-        width: 100%;
-        position: absolute;
-        margin-top: 252rem;
-        padding: 1rem;
-    }
-    
-.footer .container-footer .data-footer {
-        margin: 0 0.6rem;
-    }
-
-    .footer .container-footer .data-footer img {
-        width: 2rem;
-        height: 2rem;
-    }
-    .cart {
-        margin-right: -100vw;
-    }
-
-
+    width: 20rem;
 }

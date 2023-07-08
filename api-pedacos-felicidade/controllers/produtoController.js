@@ -10,7 +10,7 @@ module.exports =  {
         async store(req, res){
             const {nome, preco, descricao} = req.body;
             const produto = await Produtos.create({
-                nome, preco,descricao});
+                nome, preco, descricao});
                 return res.status(200).send({
                 status:1,
                 message: 'Produto cadastrado ', produto})
