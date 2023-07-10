@@ -151,7 +151,8 @@ li a:hover {
   border: 1px solid #4f381b;
 }
 
-.form-text {
+.form-text,
+.form-text a {
   color: #4f381b;
 }
 

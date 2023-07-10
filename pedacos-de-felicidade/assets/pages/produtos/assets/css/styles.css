@@ -418,6 +418,25 @@ body {
     height: 2.5rem;
 }
 
+.btn-de-add {
+    width: 10rem;
+    display: flex;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    background-color: var(--color-pink);
+    border: 1px solid var(--color-vine);
+}
+
+.btn-de-add a{
+    text-decoration: none;
+    color: var(--color-creme)
+}
+
+.btn-de-add:hover{
+    scale: 1.05;
+}
+
+
 .content .child-h>p:hover {
     scale: 1.05;
     cursor: default;

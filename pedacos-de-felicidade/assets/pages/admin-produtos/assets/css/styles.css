@@ -465,6 +465,29 @@ body {
     border: none;
 }
 
+.content .products .btns{
+    display: flex;
+    
+}
+
+.content .products .btns button:nth-child(1), 
+.content .products .btns button:nth-child(2)
+{
+    margin-left: 1rem;
+    color: var(--color-creme);
+    background-color: var(--color-pink);
+    padding: 0.5rem 3rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    border: none;
+}
+
+.content .products .btns button:nth-child(2){
+    
+    background: var(--color-vine);
+    
+}
+
 .content .products .btn-buy:hover {
     background: var(--color-pink);
     color: var(--color-creme);

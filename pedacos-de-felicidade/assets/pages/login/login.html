@@ -6,21 +6,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script defer src="./assets/js/script.js"></script>
     <title>Pedaço de felicidades</title>
   </head>
   <body>
     <header class="header">
-      <img src="logo.png" alt="Imagem" class="canto-superior-esquerdo" />
+      <img src="./assets/imgs/logo.png" alt="Imagem" class="canto-superior-esquerdo" />
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Produtos</a></li>
-        <li><a href="#services">Sobre nós</a></li>
-        <li><a href="#contact">Contato</a></li>
+        <li><a href="/pedacos-de-felicidade/index.html">Home</a></li>
+        <li><a href="/pedacos-de-felicidade/assets/pages/produtos/index.html">Produtos</a></li>
+        <li><a href="/pedacos-de-felicidade/assets/pages/about-us/index.html">Sobre nós</a></li>
       </ul>
     </header>
 
     <main class="container">
-      <img class="background" src="bolos.jpg" />
+      <img class="background" src="./assets/imgs/bolos.jpg" />
       <div class="wrapper">
         <form class="form">
           <section class="form-header">
@@ -51,72 +51,33 @@
               <span>Esqueci minha senha.</span>
             </p>
             <button type="submit" class="btn btn-primary">Login</button>
-            <p class="form-text">Novo por aqui?  <a href="cadastro.html">Cadastre-se</a></p>
+            <p class="form-text">Novo por aqui?  <a href="/pedacos-de-felicidade/assets/pages/cadastro/cadastro.html">Cadastre-se</a></p>
           </section>
         </form>
       </div>
     </main>
     <footer class="footer">
-      <img src="logo.png" alt="Imagem" class="footer-logo" />
+      <img src="./assets/imgs/logo.png" alt="Imagem" class="footer-logo" />
       <div class="footer-infos">
         <div class="info">
-          <img src="Icone.png" />
+          <img src="./assets/imgs/Icone.png" />
           <p class="info-text">
             Rua Francisco Batista<br />
             Centro<br/> Alagoinhas-BA
           </p>
         </div>
         <div class="info">
-          <img src="whats.png" />
+          <img src="./assets/imgs/whats.png" />
           <p class="info-text">
             (75) 99888-8888<br />
             (75) 99944-4444
           </p>
         </div>
         <div class="info">
-          <img src="email.png" />
+          <img src="./assets/imgs/email.png" />
           <p class="info-text">ouvidoria@pedacofelicidade.com</p>
         </div>
       </div>
     </footer>
-
-    <script>
-      
-      document.addEventListener('DOMContentLoaded', function() {
-        var emailInput = document.querySelector('input[type="text"]');
-        var passwordInput = document.querySelector('input[type="password"]');
-        var loginButton = document.querySelector('button[type="submit"]');
-        var form = document.querySelector('.form');
-
-        form.addEventListener('submit', function(event) {
-          event.preventDefault();
-
-          // Perform validation
-          var email = emailInput.value;
-          var password = passwordInput.value;
-
-          if (email === '') {
-            alert('Por favor, preencha o campo de e-mail.');
-            return;
-          }
-
-          if (password === '') {
-            alert('Por favor, preencha o campo de senha.');
-            return;
-          }
-          
-          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!email.match(emailRegex)) {
-          alert('Por favor, insira um endereço de e-mail válido.');
-          return false;
-          }
-
-        
-         form.reset();
-
-                 
-        });
-      });
-    </script>
   </body>
 </html>
