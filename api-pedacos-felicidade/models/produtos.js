@@ -1,23 +1,7 @@
-
-const  {Model, DataTypes}  = require ('sequelize');
 const Sequelize = require('sequelize')
 const database = require('../database/index.js')
-/*
-class Produtos extends Model{
-    static init (sequelize){
-        super.init ({
-        nome: DataTypes.STRING,
-        preco: DataTypes.DECIMAL,
-        descricao : DataTypes.STRING
-        
-        }, {sequelize})
-    
-    }
 
-}
 
-module.exports =  Produtos;
-*/
 const Produtos = database.define('produto', {
     id: {
     type: Sequelize.INTEGER,
@@ -32,10 +16,14 @@ const Produtos = database.define('produto', {
     preco: {
     type: Sequelize.DECIMAL,
     },
-    descricao: Sequelize.STRING    
+    descricao: Sequelize.STRING,
+    imagem: {
+        type: Sequelize.BLOB,
+        allowNull: false
+      },  
     })
     
-
+    
     module.exports =  Produtos;
 
 

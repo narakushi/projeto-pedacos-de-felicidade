@@ -6,6 +6,11 @@ const dropDownCart = document.querySelector('.cart');
 let isOpenMenu;
 let isOpenCart;
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Código a ser executado quando o DOM estiver pronto
+    // Aqui você pode manipular elementos do DOM, adicionar ouvintes de eventos, etc.
+});
+
 toggleBtn.onclick = function () {
 
     dropDownMenu.classList.toggle('open');
@@ -28,13 +33,12 @@ function addToCart() {
     nCar.innerHTML = addItem;
 }
 
-function removeToCart(qtd){
+function removeToCart(qtd) {
     let nCar = document.querySelector('#nCar');
-    if(addItem >= 1)
-    {
+    if (addItem >= 1) {
         addItem -= qtd;
     }
-    
+
     nCar.innerHTML = addItem;
 }
 
@@ -63,12 +67,24 @@ function ready() {
     }
 
     //Adicionando função aos botões de comprar
-
-    let btnBuy = document.getElementsByClassName('btn-buy');
-    for (let i = 0; i < btnBuy.length; i++) {
-        let btn = btnBuy[i];
-        btn.addEventListener('click', addToCartClicked);
+   //função adicionada para atrasar um pouco, já que os bolos chegam de forma assincrona!!
+    function checkElementsAvailability() {
+        let btnBuy = document.getElementsByClassName('btn-buy');
+        if (btnBuy.length > 0) {
+            for (let i = 0; i < btnBuy.length; i++) {
+                let btn = btnBuy[i];
+                btn.addEventListener('click', addToCartClicked);
+            }
+        } else {
+            // Os elementos ainda não estão disponíveis, aguardar e verificar novamente
+            setTimeout(checkElementsAvailability, 100); // Atraso de 100 milissegundos
+        }
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Atrasar a verificação da disponibilidade dos elementos DOM
+        setTimeout(checkElementsAvailability, 100); // Atraso de 100 milissegundos
+    });
 }
 
 function delItemCart(event) {
@@ -104,7 +120,7 @@ function updatePriceCart() {
     }
 
     let totalPriceElement = document.querySelector('.cart-price-total');
-    total = total / 100;
+    total = total/100;
     totalPriceElement.innerText = 'R$' + total.toFixed(2);
 }
 
@@ -140,15 +156,14 @@ function deductQtd(event) {
     qtdCurrent = Number(qtdCurrent);
     removeToCart(1);
     qtdCurrent--;
-   
+
 
     if (qtdCurrent > 0) {
         cartItemQtd.value = qtdCurrent;
         //atualizamos o total no carrinho
         updatePriceCart();
     }
-    else 
-    {
+    else {
         cartItem.parentElement.remove();
         updatePriceCart();
     }
@@ -161,6 +176,7 @@ function addToCartClicked(event) {
     let title = item.getElementsByClassName('product-title')[0].innerText;
     let price = item.getElementsByClassName('product-price')[0].innerText;
     let img = item.getElementsByClassName('product-img')[0].src;
+
 
     //função para adicionar o item ao carrinho
     const bolo = {
@@ -188,7 +204,7 @@ function addItemToCart(bolo) {
         }
     }
     addToCart();
-    
+
 
     let itemCartContainer = `
     <div class="cart-item">
@@ -218,3 +234,4 @@ function addItemToCart(bolo) {
 }
 
 ready();
+

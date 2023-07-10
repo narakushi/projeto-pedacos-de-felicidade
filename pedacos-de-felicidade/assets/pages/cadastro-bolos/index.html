@@ -7,6 +7,7 @@
     <title>Cadastro de Bolos</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script defer src="./assets/js/script.js"></script>
+    <script defer src="./assets/js/postProdutos.js"></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
             </div>
             <ul class="nav-bar">
                 <li><a href=".//index.html">Home</a></li>
-                <li><a href=".//assets/pages/produtos/index.html">Produtos</a></li>
+                <li><a href="/pedacos-de-felicidade/assets/pages/produtos/index.html">Produtos</a></li>
                 <li><a href=".//assets/pages/about-us/index.html">Sobre Nós</a></li>
             </ul>
         </div>
@@ -36,42 +37,7 @@
             </div>
 
             <div class="cart-items">
-                <!--
-                <div class="cart-item">
-                    <img class="item-i" src="./assets/imgs/bolo02.png" alt="bolo-de-morango">
-                    <div class="cart-details">
-                        <span class="title-item-cart">Bolo de Morango</span>
-                        <div class="selector-qtd">
-                            <i class="fa-solid fa-minus deduct-qtd"></i>
-                            <input type="text" value="2" class="cart-item-qtd">
-                            <i class="fa-solid fa-plus add-qtd"></i>
-                            <span class="cart-item-price">R$32.69</span>
-                        </div>
-                    </div>
-                    <span class="btn-delete">
-                        <i class="fa-solid fa-trash"></i>
-                    </span>
-                </div>
-
-                <div class="cart-items">
-                    <div class="cart-item">
-                        <img class="item-i" src="./assets/imgs/bolo03.png" alt="bolo-de-morango">
-                        <div class="cart-details">
-                            <span class="title-item-cart">Bolo de Formigueiro</span>
-                            <div class="selector-qtd">
-                                <i class="fa-solid fa-minus deduct-qtd"></i>
-                                <input type="text" value="1" class="cart-item-qtd">
-                                <i class="fa-solid fa-plus add-qtd"></i>
-                                <span class="cart-item-price">R$20.00</span>
-                            </div>
-                        </div>
-                        <span class="btn-delete">
-                            <i class="fa-solid fa-trash"></i>
-                        </span>
-                    </div>
-
-                </div>
-                -->
+        
             </div>
             <div class="cart-total">
                 <div class="your-total">
@@ -106,7 +72,7 @@
     <div class="content">
         <div class="card">
             <div class="header-card-cad">Cadastrar Um Novo Bolo</div>
-            <form action="#" class="form-cadastro">
+            <form action="#" class="form-cadastro" enctype="multipart/form-data">
                 <div class="form-dados">
                     <div class="rotulo">
                         <img src="./assets/imgs/nome-bolo.svg" alt="icone-nome-bolo">
@@ -142,8 +108,6 @@
                     <button><a href="/pedacos-de-felicidade/assets/pages/produtos/index.html">Ver Produtos</a></button>
                 </div>
             </form>
-
-            <img id="teste" src="" alt="">
 
         </div>
     </div>

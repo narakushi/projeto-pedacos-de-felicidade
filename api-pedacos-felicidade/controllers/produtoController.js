@@ -1,5 +1,7 @@
 const Produtos = require('../models/produtos.js')
+const upload = require('../config/configMulter.js')
 module.exports =  {
+
         async index(req, res){
             const produto = await Produtos.findAll();
             if(produto == '' || produto == null){
@@ -7,10 +9,18 @@ module.exports =  {
             }
             return res.status(200).send({produto});
         },
-        async store(req, res){
-            const {nome, preco, descricao} = req.body;
-            const produto = await Produtos.create({
-                nome, preco, descricao});
+            async store(req, res) {
+                upload.single('imagem');
+
+                  const { nome, preco, descricao } = req.body;
+                  const { filename } = req.file
+            
+                  const produto = await Produtos.create({
+                    nome,
+                    preco,
+                    descricao,
+                    imagem: filename
+                  });
                 return res.status(200).send({
                 status:1,
                 message: 'Produto cadastrado ', produto})
@@ -45,7 +55,7 @@ module.exports =  {
     
     }
     
-    //module.exports =  exports;
+ 
     
     
     

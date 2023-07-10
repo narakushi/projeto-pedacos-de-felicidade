@@ -1,31 +1,8 @@
 const Cadastros  = require('../models/cadastros.js');
-const bcrypt = require('bcryptjs');
 
 module.exports =  {
 
-        async login(req, res){
-            
-        const {email, senha} = req.body;
-        const cadastro = await Cadastros.findOne({where:{email}});
-                if(!cadastro){
-                return res.status(400).send({
-                    status:0,
-                    message:'E-mail ou senha incorreto'
-                });
-            
-                }
-               
-            if(!bcrypt.compareSync(senha, cadastro.senha)){
-                return res.status(400).send({
-                
-                status:0,
-                message: 'E-mail ou senha incorreto'
-            });
-
-            }
-    
-        },
-        
+       
         async index(req, res){
             const cadastro = await Cadastros.findAll();
             if(cadastro == '' || cadastro == null){
